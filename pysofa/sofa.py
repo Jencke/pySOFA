@@ -1,4 +1,5 @@
 import tables as tbls
+from warnings import simplefilter
 
 class FIR(object):
     '''Object to hold and read the information for an FIR Object as defined by the Sofa specifications.
@@ -218,6 +219,9 @@ class SOFA(object):
             tblsfile = tbls.open_file(sofa_file)
         else:
             tblsfile = sofa_file
+
+        # Supress DataType Warnings
+        simplefilter("ignore")
 
         # List of the Attributes that are required by the SOFA specivication
         req_attributes = ['Conventions', 'Version', 'SOFAConventions',

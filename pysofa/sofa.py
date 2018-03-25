@@ -242,14 +242,14 @@ class SOFA(object):
             _add_attribute(self, tblsfile, '/', param)
 
         # read information about the three required Audio Objects
-        self.listener = AudioObject('Listener', tblsfile)
-        self.source = AudioObject('Source', tblsfile)
-        self.receiver = AudioObject('Receiver', tblsfile)
-        self.emitter = AudioObject('Emitter', tblsfile)
+        self.Listener = AudioObject('Listener', tblsfile)
+        self.Source = AudioObject('Source', tblsfile)
+        self.Receiver = AudioObject('Receiver', tblsfile)
+        self.Emitter = AudioObject('Emitter', tblsfile)
 
         # Read the Data included in the SOFA file
         if self.DataType == 'FIR':
-            self.data = FIR(tblsfile)
+            self.FIR = FIR(tblsfile)
         else:
             raise Exception('Currently only the Datatype FIR is Implemented')
 

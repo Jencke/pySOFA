@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "pySOFA",
-    version = "0.0.2",
+    version = "0.0.3",
     author = "Joerg Encke",
     author_email = "joerg.encke@tum.de",
 

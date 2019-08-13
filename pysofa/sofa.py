@@ -247,6 +247,15 @@ class SOFA(object):
         self.Receiver = AudioObject('Receiver', tblsfile)
         self.Emitter = AudioObject('Emitter', tblsfile)
 
+        # If the DataType isn't stored as a String, convert
+        # it to a string.
+        if type(self.DataType) != str:
+            try:
+                convertedDataType = str(self.DataType, 'utf-8')
+                self.DataType = convertedDataType
+            except TypeError:
+                raise Exception('DataType cannot be converted to a string')
+
         # Read the Data included in the SOFA file
         if self.DataType == 'FIR':
             self.FIR = FIR(tblsfile)
